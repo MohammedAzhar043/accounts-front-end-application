@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-     <h1>This is Mohammed Azhar </h1>
+     <h1 class="text-3xl font-bold underline">This is Mohammed Azhar </h1>
     </>
   )
 }
