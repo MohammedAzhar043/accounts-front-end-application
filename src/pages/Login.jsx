@@ -1,26 +1,35 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import { toast } from "react-hot-toast";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    navigate("/");
+    // navigate("/");
 
-    // try {
-    //   await loginUser(username, password);
-    //   navigate("/dashboard");
-    // } catch (err) {
-    //   alert("Invalid username or password");
-    //   console.error(err);
-    // }
+    try {
+      await login(username, password);
+      toast.success("Login successful 🎉");
+      navigate("/dashboard");
+    } catch (err) {
+      const msg =
+        err.response?.data?.detail ||
+        err.response?.data?.message ||
+        err.message ||
+        "Something went wrong";
+
+      toast.error(msg);
+    }
   };
 
   return (
-    <div className="flex min-h-screen flex-col justify-center px-6 py-12 bg-gray-900">
+    <div className="flex min-h-screen flex-col justify-center px-6 py-12 bg-gray-600">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <h2 className="text-center text-2xl font-bold tracking-tight text-white">
           Sign in to your account
@@ -35,7 +44,7 @@ const Login = () => {
               htmlFor="username"
               className="block text-sm font-medium text-gray-100"
             >
-              Username
+              User Name
             </label>
             <div className="mt-2">
               <input
