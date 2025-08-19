@@ -1,13 +1,22 @@
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Navbar from "./components/Navbar";
 
-import './App.css'
 
 function App() {
-
   return (
     <>
-     <h1 class="text-3xl font-bold underline">This is Mohammed Azhar </h1>
+      <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
