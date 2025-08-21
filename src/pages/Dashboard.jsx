@@ -169,16 +169,16 @@ const Dashboard = () => {
                     recentTransactions.map((transaction) => (
                       <tr key={transaction.id} className="border-b border-gray-700">
                         <td className="px-4 py-2">
-                          {new Date(transaction.transaction_date).toLocaleDateString()}
+                          {new Date(transaction.created_at).toLocaleDateString()}
                         </td>
                         <td className="px-4 py-2">{transaction.description}</td>
                         <td className="px-4 py-2">
-                          <span className={`px-2 py-1 text-xs rounded-full ${
-                            transaction.type === 'debit' 
+                          <span className={`px-2 py-1 text-xs rounded-full text-white ${
+                            transaction.transaction_type === 'debit' 
                               ? 'bg-red-500 bg-opacity-20 text-red-400' 
                               : 'bg-green-500 bg-opacity-20 text-green-400'
                           }`}>
-                            {transaction.type}
+                            {transaction.transaction_type}
                           </span>
                         </td>
                         <td className="px-4 py-2">${transaction.amount}</td>
