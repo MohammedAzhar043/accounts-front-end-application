@@ -11,7 +11,6 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // navigate("/");
 
     try {
       await login(username, password);
@@ -29,20 +28,18 @@ const Login = () => {
   };
 
   return (
-    <div className="flex min-h-screen flex-col justify-center px-6 py-12 bg-gray-600">
-      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-        <h2 className="text-center text-2xl font-bold tracking-tight text-white">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 px-6 py-12">
+      <div className="w-full max-w-md bg-white rounded-xl shadow-lg p-8">
+        <h2 className="text-center text-2xl font-bold tracking-tight text-gray-900">
           Sign in to your account
         </h2>
-      </div>
 
-      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="mt-8 space-y-6">
           {/* Username */}
           <div>
             <label
               htmlFor="username"
-              className="block text-sm font-medium text-gray-100"
+              className="block text-sm font-medium text-gray-700"
             >
               User Name
             </label>
@@ -53,7 +50,7 @@ const Login = () => {
                 required
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className="block w-full rounded-md bg-white/5 px-3 py-2 text-base text-white placeholder-gray-500  outline-1 outline-white/10 focus:outline-2 focus:outline-indigo-500 sm:text-sm"
+                className="block w-full rounded-md border border-gray-300 px-3 py-2 text-base text-gray-900 placeholder-gray-400 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
               />
             </div>
           </div>
@@ -62,7 +59,7 @@ const Login = () => {
           <div>
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-gray-100"
+              className="block text-sm font-medium text-gray-700"
             >
               Password
             </label>
@@ -73,7 +70,7 @@ const Login = () => {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="block w-full rounded-md bg-white/5 px-3 py-2 text-base text-white placeholder-gray-500  outline-1 outline-white/10 focus:outline-2 focus:outline-indigo-500 sm:text-sm"
+                className="block w-full rounded-md border border-gray-300 px-3 py-2 text-base text-gray-900 placeholder-gray-400 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
               />
             </div>
           </div>
@@ -82,7 +79,7 @@ const Login = () => {
           <div>
             <button
               type="submit"
-              className="flex w-full justify-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-400 focus:outline-2 focus:outline-indigo-500"
+              className="flex w-full justify-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             >
               Sign in
             </button>

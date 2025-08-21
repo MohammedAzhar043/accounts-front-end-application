@@ -15,7 +15,7 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-// Add response interceptor → handle errors globally
+
 // Add response interceptor → handle errors globally
 api.interceptors.response.use(
   (response) => response,
