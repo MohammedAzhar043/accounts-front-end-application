@@ -7,9 +7,11 @@ import ProtectedRoute from "../components/ProtectedRoute";
 import ChartOfAccounts from "../pages/ChartOfAccounts";
 import Transactions from "../pages/Transactions";
 import Reports from "../pages/Reports";
+import { useState } from "react";
 
 const Layout = () => {
   const location = useLocation();
+  
 
   // Hide navbar on dashboard and accounting pages
   const hideNavbar =
@@ -21,6 +23,7 @@ const Layout = () => {
 
   return (
     <>
+    
       {!hideNavbar && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
@@ -29,7 +32,7 @@ const Layout = () => {
           path="/dashboard"
           element={
             <ProtectedRoute>
-              <Dashboard />
+              <Dashboard  />
             </ProtectedRoute>
           }
         />

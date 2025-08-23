@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import FeatureCard from "../components/FeatureCard";
+import FeatureCard from "../components/home/FeatureCard";
 import { features } from "../data/features";
 import { FaSpinner } from "react-icons/fa";
 

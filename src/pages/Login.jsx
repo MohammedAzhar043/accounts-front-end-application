@@ -1,4 +1,4 @@
-import LoginForm from "../components/LoginForm";
+import LoginForm from "../components/login/LoginForm";
 import { useLogin } from "../hooks/useLogin";
 import { FaSpinner } from "react-icons/fa";
 
